@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package hello;
+option go_package="./;hello";
+
+service Hello{
+    rpc Ping(PingRequest) returns (PingResponse) {}
+    rpc Hello(HelloRequest) returns (HelloResponse) {}
+}
+
+message PingRequest{
+    string echo = 1;
+}
+
+message PingResponse {
+    string echo = 1;
+}
+
+message HelloRequest{
+    string name = 1;
+}
+
+message HelloResponse {
+    string hi = 1;
+}
